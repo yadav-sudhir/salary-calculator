@@ -1,0 +1,43 @@
+Hello! This is the final, comprehensive set of instructions to prepare my salary calculator for deployment, incorporating competitive SEO and final contact details.
+
+Please perform the following three tasks precisely and without error:
+
+**Task 1: Integrate Competitive SEO-Optimized Text into index.html**
+
+1.  **Objective:** Insert a block of SEO-optimized text below the main calculator interface to outrank competitors by emphasizing accuracy, speed, and the Old vs. New Regime comparison.
+2.  **Location:** Find the closing tag of the main calculator container (or the results section) in `index.html`. Insert the following HTML block immediately after that section, but before the main footer.
+3.  **Content to Insert:**
+
+    ```html
+    <div id="seo-content" style="margin-top: 50px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+        <h2>The Most Accurate In-Hand Salary Calculator for India (FY 2025-26)</h2>
+        <p>Stop guessing your take-home pay. While other calculators (like those from AmbitionBox or IDFC First Bank) offer basic estimates, our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate **In-Hand Salary** figure. We are constantly updated to reflect the latest budget changes and tax slabs for the current financial year.</p>
+
+        <h3>Instantly Compare Old vs. New Tax Regime for Maximum Savings</h3>
+        <p>Choosing the right tax regime is the single biggest financial decision for salaried individuals. Our unique comparison feature instantly shows you the exact tax liability and savings under both the **Old Tax Regime** (with deductions like 80C, HRA, etc.) and the **New Tax Regime** (with lower tax rates). This is the critical information you need to make an informed choice, a feature often missing or confusing on government and competitor websites.</p>
+
+        <h3>Understanding Your Salary Breakdown</h3>
+        <p>Your Cost to Company (CTC) is broken down by mandatory deductions:</p>
+        <ul>
+            <li>**Income Tax (TDS):** Calculated using the correct slab system for your chosen regime.</li>
+            <li>**Employee Provident Fund (EPF):** The mandatory contribution towards your retirement.</li>
+            <li>**Professional Tax (PT):** Applied accurately based on the state you select.</li>
+        </ul>
+        <p>We believe in 100% transparency. Use our tool to gain clarity and take control of your financial planning, ensuring you don't leave any money on the table.</p>
+    </div>
+    ```
+
+**Task 2: Update Contact Email in contact.html**
+
+1.  **Objective:** Update the placeholder email address on the `contact.html` page to the final, professional email.
+2.  **File:** `contact.html`
+3.  **Instruction:** Find the placeholder email address (e.g., `[your-email@example.com]`) and replace it with the final email: **`SalaryCalc@proton.me`**.
+
+**Task 3: Add Final Accuracy Disclaimer (Trust Building)**
+
+1.  **Objective:** Add a small, clear disclaimer in the footer or near the calculation button to build trust and manage user expectations, which is essential for financial tools.
+2.  **Location:** Find the main footer section in `index.html`.
+3.  **Content to Insert:** Add the following text as a small, greyed-out paragraph:
+    `<p style="font-size: 0.75rem; color: #6c757d; margin-top: 20px;">Disclaimer: This calculator is for estimation purposes only and should not be considered professional tax advice. Always consult a certified tax professional for final tax filing.</p>`
+
+Please confirm these changes and prepare the files for final download and deployment.

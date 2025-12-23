@@ -1,0 +1,38 @@
+Build a complete **In-Hand Salary Calculator for India FY 2025–26** as a **single-page web app**. The tool must be fully functional, visually appealing, and AdSense-compliant. Requirements:
+
+1. **Functionality**:
+   - Input fields: Annual CTC (₹), HRA %, PF %, Bonus (₹), Tax regime (dropdown: Old / New), State (dropdown, optional for HRA).
+   - Output: Monthly in-hand salary, annual take-home, tax deduction, PF deduction, and a comparison table between Old vs New tax regime.
+   - Auto-update year banner (e.g., “Updated for FY 2025–26”) that refreshes automatically every year.
+   - Include dynamic logic to update tax slabs and HRA limits via a JSON file so future updates don’t require code changes.
+
+2. **UI / Design**:
+   - Clean, modern, professional layout.
+   - Color palette: Primary #3B82F6 (blue), Secondary #10B981 (green), Accent #F59E0B (orange), Background #F9FAFB, Text #111827.
+   - Fonts: Poppins Bold for headings, Inter Regular for body text.
+   - Motion & animation:
+       - Input focus: soft glow with shadow animation.
+       - Calculate button: scale-up on hover, small bounce on click.
+       - Result card: slide down + fade-in animation.
+       - Accordion FAQ: smooth height transition for collapsible sections.
+
+3. **SEO / Ranking Optimization**:
+   - Title: “In-Hand Salary Calculator After Tax India 2025–26 | Old vs New Tax Regime”.
+   - Meta description: “Calculate your exact take-home salary instantly with our updated FY 2025–26 in-hand salary calculator. Compare old vs new tax regime, including HRA & PF deductions.”
+   - Include FAQ schema markup for collapsible questions.
+   - Mobile-first responsive layout.
+
+4. **Policies & Disclaimer**:
+   - Include Privacy Policy, Terms & Conditions, and Disclaimer sections.
+   - Disclaimer: “Calculations are indicative; actual salary may vary. Tool is for educational purposes only.”
+
+5. **AdSense Optimization**:
+   - Provide space placeholders for 1 in-content ad, 1 sticky bottom ad, 1 anchor ad.
+
+6. **Other Requirements**:
+   - Single-page, fast-loading (<1.5s) web app.
+   - Fully functional without any backend; pure HTML/CSS/JS.
+   - All elements interactive and visually engaging.
+   - Auto-update the banner year dynamically using JS.
+
+Generate **complete code (HTML + CSS + JS)** ready to copy and paste into Replit or any hosting platform.

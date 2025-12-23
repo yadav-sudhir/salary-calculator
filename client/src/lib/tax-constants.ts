@@ -1,0 +1,76 @@
+export interface TaxSlab {
+  limit: number;
+  rate: number;
+}
+
+export interface TaxRegimeData {
+  slabs: TaxSlab[];
+  standardDeduction: number;
+  rebateLimit: number; // Income up to which no tax is payable (87A)
+  cess: number; // Health and Education Cess percentage
+  surcharge: TaxSlab[]; // Surcharge slabs based on income
+}
+
+// Dynamic Financial Year Calculation
+const currentDate = new Date();
+const currentMonth = currentDate.getMonth(); // 0-11
+const currentYear = currentDate.getFullYear();
+
+// If Jan-Mar (0-2), FY starts in prev year. Else current year.
+const fyStartYear = currentMonth < 3 ? currentYear - 1 : currentYear;
+const fyEndYear = fyStartYear + 1;
+
+export const FY_YEAR = `${fyStartYear}-${fyEndYear.toString().substring(2)}`; // e.g., "2025-26"
+
+// Based on interim budget 2024-25 and expected trends for 2025-26
+// This structure allows easy updates via JSON modification
+
+export const OLD_REGIME: TaxRegimeData = {
+  standardDeduction: 50000,
+  rebateLimit: 500000,
+  cess: 0.04,
+  slabs: [
+    { limit: 250000, rate: 0 },
+    { limit: 500000, rate: 0.05 },
+    { limit: 1000000, rate: 0.20 },
+    { limit: Infinity, rate: 0.30 },
+  ],
+  surcharge: [
+    { limit: 5000000, rate: 0.10 },
+    { limit: 10000000, rate: 0.15 },
+    { limit: 20000000, rate: 0.25 },
+    { limit: 50000000, rate: 0.37 }, 
+    { limit: Infinity, rate: 0.37 },
+  ]
+};
+
+export const NEW_REGIME: TaxRegimeData = {
+  standardDeduction: 75000, // Increased to 75k recently
+  rebateLimit: 1200000, // Tax free up to 7L (rebate limit technically 7L but effectively 0 tax)
+  
+  cess: 0.04,
+  slabs: [
+    { limit: 300000, rate: 0 },
+    { limit: 700000, rate: 0.05 },
+    { limit: 1000000, rate: 0.10 },
+    { limit: 1200000, rate: 0.15 },
+    { limit: 1500000, rate: 0.20 },
+    { limit: Infinity, rate: 0.30 },
+  ],
+  surcharge: [
+    { limit: 5000000, rate: 0.10 },
+    { limit: 10000000, rate: 0.15 },
+    { limit: 20000000, rate: 0.25 },
+    { limit: Infinity, rate: 0.25 }, // Surcharge capped at 25% for New Regime
+  ]
+};
+
+export const STATES = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", 
+  "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", 
+  "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", 
+  "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", 
+  "Uttar Pradesh", "Uttarakhand", "West Bengal", "Delhi", "Other/Union Territory"
+];
+
+export const METRO_CITIES = ["Delhi", "Mumbai", "Kolkata", "Chennai"]; 
