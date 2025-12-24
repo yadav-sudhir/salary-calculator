@@ -1,13 +1,13 @@
 {
-  "name": "rest-express",
+  "name": "salary-calculator",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "scripts": {
-  "dev:client": "vite dev --port 5000",
-  "build": "vite build",
-  "check": "tsc"
-},
+    "dev:client": "vite dev --port 5000",
+    "build": "vite build",
+    "check": "tsc"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
