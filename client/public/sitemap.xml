@@ -3,8 +3,8 @@
 
   <!-- 
     Homepage / Main Calculator
-    Priority: 1.0 (The most important page )
-    Change Frequency: monthly (You might tweak the UI or text)
+    Priority: 1.0 (The most important page)
+    Change Frequency: monthly
   -->
   <url>
     <loc>https://salarycalc.in/</loc>
@@ -12,23 +12,11 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- 
-    Calculator Page (Explicit URL )
-    Priority: 0.9 (Slightly less important than the homepage itself)
-    Change Frequency: monthly 
-  -->
-  <url>
-    <loc>https://salarycalc.in/calculator</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
   <!-- 
     Privacy Policy Page
-    Priority: 0.2 (Lowest priority - important for legal reasons, but not for ranking )
-    Change Frequency: yearly (This page rarely changes)
+    Priority: 0.2 (Important for legal reasons, not ranking)
+    Change Frequency: yearly
   -->
   <url>
     <loc>https://salarycalc.in/privacy</loc>
