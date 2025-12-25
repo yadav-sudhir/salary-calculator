@@ -1,36 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage / Main Calculator -->
   <url>
     <loc>https://salarycalc.in/</loc>
     <lastmod>2025-12-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://salarycalc.in/privacy</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <!-- Terms & Conditions -->
-  <url>
-    <loc>https://salarycalc.in/terms</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <!-- Contact Page -->
-  <url>
-    <loc>https://salarycalc.in/contact</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
 </urlset>
