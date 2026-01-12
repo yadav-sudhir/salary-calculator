@@ -1,6 +1,10 @@
-import { useEffect } from 'react';
+// client/src/pages/Calculator.tsx
+import React, { useEffect, useState } from 'react';
 import { injectSchema, removeSchema, webPageCalculatorSchema, faqPageSchema } from '../utils/seoUtils';
-// Inside your Calculator functional component (e.g., right after the function declaration)
+// ... other imports and component logic
+
+const Calculator: React.FC = () => {
+  // ... existing state and functions
 
   useEffect(() => {
     // Inject WebPage and Calculator schema
@@ -13,4 +17,18 @@ import { injectSchema, removeSchema, webPageCalculatorSchema, faqPageSchema } fr
       removeSchema('web-page-calculator-schema');
       removeSchema('faq-page-schema');
     };
-  }, []); // Empty dependency array ensures this runs once on mount and unmount
+  }, []);
+
+  return (
+    // ... your existing JSX for the calculator page
+    <div>
+      <h1>In-Hand Salary Calculator India 2025-26</h1>
+      {/* ... calculator input fields ... */}
+
+      <h2>Frequently Asked Questions</h2>
+      {/* ... FAQ content ... */}
+    </div>
+  );
+};
+
+export default Calculator;
