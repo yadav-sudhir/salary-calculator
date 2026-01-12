@@ -11,6 +11,7 @@ import Contact from "@/pages/contact";
 import Calculator from "@/pages/Calculator";
 import BlogPage from "@/pages/BlogPage";
 import PostPage from "@/pages/PostPage";
+import AdminPage from "@/pages/AdminPage"; // New Import
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/calculator" component={Calculator} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={PostPage} />
+      <Route path="/admin" component={AdminPage} /> {/* New Admin Route */}
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/contact" component={Contact} />
