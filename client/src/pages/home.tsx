@@ -22,6 +22,8 @@ export default function Home() {
           <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
             <a href="#calculator" className="hover:text-primary transition-colors">Calculator</a>
             <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
+            {/* Added Blog Link below */}
+            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
           </nav>
         </div>
