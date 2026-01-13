@@ -3,7 +3,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://salarycalc.in/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,16 +11,16 @@
   <!-- Blog Listing Page -->
   <url>
     <loc>https://salarycalc.in/blog</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Example Blog Post (Repeat this for each article ) -->
+  <!-- Blog Article: How to Save Tax for Salaried Employees 2025-26 -->
   <url>
-    <loc>https://salarycalc.in/blog/your-first-article-slug</loc>
-    <lastmod>2026-01-12</lastmod>
+    <loc>https://salarycalc.in/blog/how-to-save-tax-for-salaried-employees-2025-26</loc>
+    <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
