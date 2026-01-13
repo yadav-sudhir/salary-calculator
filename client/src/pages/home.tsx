@@ -4,6 +4,7 @@ import SalaryCalculator from "@/components/ui/salary-calculator";
 import FAQ from "@/components/faq";
 import MonetizationSection from "@/components/monetization-section";
 import { FY_YEAR } from "@/lib/tax-constants";
+import posts from '../posts.json';
 
 export default function Home() {
   return (
@@ -113,6 +114,38 @@ export default function Home() {
             <p className="text-gray-600 leading-relaxed">
               We believe in 100% transparency. Use our tool to gain clarity and take control of your financial planning, ensuring you don't leave any money on the table.
             </p>
+          </div>
+        </section>
+
+        {/* Latest Blog Posts Section */}
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-end mb-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900">Latest from Blog</h2>
+                <p className="mt-2 text-gray-600">Expert insights on tax saving and financial planning</p>
+              </div>
+              <Link href="/blog" className="text-primary font-semibold hover:underline">
+                View All Posts →
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {posts.slice(0, 3).map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`} className="group">
+                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 transition-all hover:shadow-md hover:border-primary/20">
+                    <span className="text-sm text-gray-500">{post.date}</span>
+                    <h3 className="mt-3 text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 text-gray-600 line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-block text-primary font-medium">Read More →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </main>
