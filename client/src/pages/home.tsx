@@ -94,12 +94,16 @@ export default function Home() {
           <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate 8th Pay Commission & In-Hand Salary Calculator for India (FY 2026-27)</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Stop guessing your take-home pay. While other calculators offer basic estimates, our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate **In-Hand Salary** figure. We are constantly updated to reflect the latest **8th Pay Commission** projections, **FY 2026-27** tax slabs, and **state-wise Professional Tax** rules for the most accurate calculation. Whether you are a private employee or a central government employee, our **8th CPC Salary Calculator** provides the most reliable results.
+              Stop guessing your take-home pay and start planning your future. While many calculators provide generic estimates, our tool is built to handle the complexities of the Indian payroll system with precision. We provide a transparent, line-by-line breakdown of every deduction, ensuring you see the exact <span className="font-bold">In-Hand Salary</span> that will hit your bank account. 
+<br /><br />
+Our engine is constantly updated to reflect the most recent <span className="font-bold">8th Pay Commission</span> projections, the latest <span className="font-bold">FY 2026-27</span> tax slabs (including the new ₹12 Lakh rebate), and accurate <span className="font-bold">state-wise Professional Tax</span> rules. Whether you are a private sector professional or a central government employee, our <span className="font-bold">8th CPC Salary Calculator</span> is designed to be your most reliable financial companion.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Instantly Compare Old vs. New Tax Regime for Maximum Savings</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Choosing the right tax regime is the single biggest financial decision for salaried individuals. Our unique comparison feature instantly shows you the exact tax liability and savings under both the <strong>Old Tax Regime</strong> (with deductions like 80C, HRA, etc.) and the <strong>New Tax Regime</strong> (with lower tax rates). Use our tool to estimate your **8th Pay Commission salary hike** and see which regime is better for your **FY 2026-27** income. This is the critical information you need to make an informed choice.
+              Deciding between the Old and New Tax Regime is often the most significant financial choice you'll make each year. With the introduction of the <span className="font-bold">FY 2026-27</span> tax rules, the stakes are higher than ever. Our unique comparison feature takes the guesswork out of the equation, instantly showing your tax liability under both systems. 
+<br /><br />
+We factor in your <span className="font-bold">80C investments, HRA exemptions, and standard deductions</span> to give you a clear winner. If you're expecting an <span className="font-bold">8th Pay Commission salary hike</span>, our tool will show you exactly how that increase shifts your tax burden, helping you choose the regime that maximizes your savings and keeps more money in your pocket.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Understanding Your Salary Breakdown</h3>
@@ -159,7 +163,7 @@ export default function Home() {
                <span className="font-heading font-bold text-lg text-gray-900">SalaryCalc</span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              Empowering Indian employees with transparent salary insights. Updated for the **8th Pay Commission** and **FY 2026-27** tax rules.
+              Empowering Indian employees with transparent salary insights. Updated for the <span className="font-bold">8th Pay Commission</span> and <span className="font-bold">FY 2026-27</span> tax rules.
             </p>
           </div>
           <div>
