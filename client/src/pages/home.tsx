@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import SalaryCalculator from '@/components/ui/salary-calculator';
 import FAQ from '@/components/faq';
 import MonetizationSection from '@/components/monetization-section';
-import { injectionSchema } from '@/utils/seoUtils';
+import { injectSchema } from '@/utils/seoUtils';
 import rawPosts from '@/posts.json';
 
 /* Safe blog posts handling */
@@ -52,7 +52,7 @@ export default function Home() {
       },
     };
 
-    injectionSchema(homeSchema, 'homepage-schema');
+    injectSchema(homeSchema, 'homepage-schema');
   }, []);
 
   return (
