@@ -43,8 +43,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight"
             >
-              In-Hand Salary Calculator <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-500">India 2026-27</span>
+              8th Pay Commission & In-Hand Salary Calculator <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-500">India FY 2026-27</span>
             </motion.h1>
             
             <motion.p 
@@ -92,9 +92,9 @@ export default function Home() {
         {/* SEO Content Section */}
         <section id="seo-content" className="py-12 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate In-Hand Salary Calculator for India (FY 2026-27)</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate 8th Pay Commission & In-Hand Salary Calculator for India (FY 2026-27)</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Stop guessing your take-home pay. While other calculators offer basic estimates, our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate <strong>In-Hand Salary</strong> figure. We are constantly updated to reflect the latest **8th Pay Commission** projections, **FY 2026-27** tax slabs, and **state-wise Professional Tax** rules for the most accurate calculation.
+              Stop guessing your take-home pay. While other calculators offer basic estimates, our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate **In-Hand Salary** figure. We are constantly updated to reflect the latest **8th Pay Commission** projections, **FY 2026-27** tax slabs, and **state-wise Professional Tax** rules for the most accurate calculation. Whether you are a private employee or a central government employee, our **8th CPC Salary Calculator** provides the most reliable results.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Instantly Compare Old vs. New Tax Regime for Maximum Savings</h3>
