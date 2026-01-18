@@ -22,8 +22,16 @@ const fyEndYear = fyStartYear + 1;
 
 export const FY_YEAR = `${fyStartYear}-${fyEndYear.toString().substring(2)}`; // e.g., "2025-26"
 
-// Based on interim budget 2024-25 and expected trends for 2025-26
-// This structure allows easy updates via JSON modification
+// 8th Pay Commission Constants
+export const EIGHTH_CPC = {
+  FITMENT_FACTORS: [
+    { label: "Conservative (1.92x)", value: 1.92 },
+    { label: "Expected (2.57x)", value: 2.57 },
+    { label: "Optimistic (2.86x)", value: 2.86 }
+  ],
+  MINIMUM_PAY: 18000,
+  EXPECTED_MINIMUM_PAY: 26000
+};
 
 export const OLD_REGIME: TaxRegimeData = {
   standardDeduction: 50000,
@@ -45,9 +53,8 @@ export const OLD_REGIME: TaxRegimeData = {
 };
 
 export const NEW_REGIME: TaxRegimeData = {
-  standardDeduction: 75000, // Increased to 75k recently
-  rebateLimit: 1200000, // Tax free up to 7L (rebate limit technically 7L but effectively 0 tax)
-  
+  standardDeduction: 75000,
+  rebateLimit: 1200000,
   cess: 0.04,
   slabs: [
     { limit: 300000, rate: 0 },
@@ -61,7 +68,7 @@ export const NEW_REGIME: TaxRegimeData = {
     { limit: 5000000, rate: 0.10 },
     { limit: 10000000, rate: 0.15 },
     { limit: 20000000, rate: 0.25 },
-    { limit: Infinity, rate: 0.25 }, // Surcharge capped at 25% for New Regime
+    { limit: Infinity, rate: 0.25 },
   ]
 };
 
@@ -73,4 +80,51 @@ export const STATES = [
   "Uttar Pradesh", "Uttarakhand", "West Bengal", "Delhi", "Other/Union Territory"
 ];
 
-export const METRO_CITIES = ["Delhi", "Mumbai", "Kolkata", "Chennai"]; 
+export const METRO_CITIES = ["Delhi", "Mumbai", "Kolkata", "Chennai"];
+
+// Professional Tax Slabs (Monthly)
+export const PROFESSIONAL_TAX: Record<string, { limit: number, amount: number }[]> = {
+  "Maharashtra": [
+    { limit: 7500, amount: 0 },
+    { limit: 10000, amount: 175 },
+    { limit: Infinity, amount: 200 } // Note: Feb is 300
+  ],
+  "Karnataka": [
+    { limit: 25000, amount: 0 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "Tamil Nadu": [
+    { limit: 3500, amount: 0 },
+    { limit: 9000, amount: 20 }, // Simplified for monthly
+    { limit: 12000, amount: 60 },
+    { limit: 15000, amount: 115 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "West Bengal": [
+    { limit: 10000, amount: 0 },
+    { limit: 15000, amount: 110 },
+    { limit: 25000, amount: 130 },
+    { limit: 40000, amount: 150 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "Gujarat": [
+    { limit: 12000, amount: 0 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "Telangana": [
+    { limit: 15000, amount: 0 },
+    { limit: 20000, amount: 150 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "Andhra Pradesh": [
+    { limit: 15000, amount: 0 },
+    { limit: 20000, amount: 150 },
+    { limit: Infinity, amount: 200 }
+  ],
+  "Madhya Pradesh": [
+    { limit: 18750, amount: 0 },
+    { limit: 25000, amount: 125 },
+    { limit: 33333, amount: 166 },
+    { limit: Infinity, amount: 208 }
+  ]
+};
