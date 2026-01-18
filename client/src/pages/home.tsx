@@ -43,8 +43,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight"
             >
-              In-Hand Salary Calculator <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-500">India {FY_YEAR}</span>
+              8th Pay Commission Salary Calculator <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-500">India 2026-27</span>
             </motion.h1>
             
             <motion.p 
@@ -92,14 +92,14 @@ export default function Home() {
         {/* SEO Content Section */}
         <section id="seo-content" className="py-12 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate In-Hand Salary Calculator for India (FY {FY_YEAR})</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate 8th Pay Commission Salary Calculator for India (FY 2026-27)</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Stop guessing your take-home pay. While other calculators (like those from AmbitionBox or IDFC First Bank) offer basic estimates, our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate <strong>In-Hand Salary</strong> figure. We are constantly updated to reflect the latest budget changes and tax slabs for the current financial year.
+              Stop guessing your take-home pay. Our tool provides a transparent, step-by-step breakdown of every deduction, ensuring you get the most accurate <strong>In-Hand Salary</strong> figure. We are constantly updated to reflect the latest **8th Pay Commission** projections, **FY 2026-27** tax slabs, and **state-wise Professional Tax** rules for the most accurate calculation.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Instantly Compare Old vs. New Tax Regime for Maximum Savings</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Choosing the right tax regime is the single biggest financial decision for salaried individuals. Our unique comparison feature instantly shows you the exact tax liability and savings under both the <strong>Old Tax Regime</strong> (with deductions like 80C, HRA, etc.) and the <strong>New Tax Regime</strong> (with lower tax rates). This is the critical information you need to make an informed choice, a feature often missing or confusing on government and competitor websites.
+              Choosing the right tax regime is the single biggest financial decision for salaried individuals. Our unique comparison feature instantly shows you the exact tax liability and savings under both the <strong>Old Tax Regime</strong> (with deductions like 80C, HRA, etc.) and the <strong>New Tax Regime</strong> (with lower tax rates). Use our tool to estimate your **8th Pay Commission salary hike** and see which regime is better for your **FY 2026-27** income. This is the critical information you need to make an informed choice.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Understanding Your Salary Breakdown</h3>
@@ -159,7 +159,7 @@ export default function Home() {
                <span className="font-heading font-bold text-lg text-gray-900">SalaryCalc</span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              Empowering Indian employees with transparent salary insights. Built for the financial year {FY_YEAR}.
+              Empowering Indian employees with transparent salary insights. Updated for the **8th Pay Commission** and **FY 2026-27** tax rules.
             </p>
           </div>
           <div>
