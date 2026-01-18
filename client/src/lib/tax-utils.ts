@@ -15,10 +15,10 @@ export function calculateTax(income: number, regime: TaxRegimeData): TaxResult {
   // Apply standard deduction
   const incomeAfterStdDed = Math.max(0, grossIncome - regime.standardDeduction);
   
-  // If income is less than or equal to the rebate limit, no tax is payable
-  // For New Regime: 7L rebate
+  // Rebate Logic:
+  // For New Regime (FY 2026-27): 12L rebate
   // For Old Regime: 5L rebate
-  const rebateThreshold = regime.standardDeduction === 75000 ? 700000 : 500000;
+  const rebateThreshold = regime.rebateLimit;
   
   if (incomeAfterStdDed <= rebateThreshold) {
     return { 
@@ -86,39 +86,32 @@ export interface SalaryDetails {
   professionalTax: number; // ~2400 per year
 }
 
-export function calculateSalaryStructure(ctc: number, bonus: number, pfPercentage: number): SalaryDetails {
-  // Typical structure assumptions
-  // Basic is usually 50% of (CTC - Bonus)
-  const baseForBasic = ctc - bonus;
-  const basicSalary = baseForBasic * 0.50;
-  
-  const hraReceived = basicSalary * 0.40; // Assuming non-metro default for safety, or user input override
-  
-  const pfDeduction = basicSalary * (pfPercentage / 100);
-  
-  const professionalTax = 2400; // Flat estimate
-  
-  // Special Allowance is the balancing figure
-  const specialAllowance = Math.max(0, ctc - basicSalary - hraReceived - bonus - (basicSalary * 0.12)); // Employer PF part often in CTC
-  // Wait, CTC includes Employer PF. 
-  // Let's assume input PF % is Employee contribution.
-  // Usually CTC = Gross + Employer PF.
-  // Gross = Basic + HRA + SA + Bonus.
-  
-  // Let's simplify:
-  // CTC = Basic + HRA + Special Allowance + Bonus + Employer PF (12% basic)
-  
-  // If we assume Basic = 50% of (CTC - Bonus) / 1.12 (to account for PF)
-  // Let's keep it simple as per standard calculators:
-  // Basic = 50% of CTC (excluding bonus)
+export function calculateSalaryStructure(
+  ctc: number, 
+  bonus: number, 
+  pfPercentage: number,
+  state: string = "Delhi"
+): SalaryDetails {
   const ctcExBonus = ctc - bonus;
-  const basic = ctcExBonus * 0.40; // Safer conservative estimate
+  
+  // Accuracy Fix: Basic is usually 40-50% of CTC. 
+  // If PF is 0, we still calculate Basic to derive HRA and other components.
+  const basic = ctcExBonus * 0.40; 
   const hra = basic * 0.40;
-  const employerPF = basic * 0.12; 
+  
+  // Employer PF is only part of CTC if PF is enabled.
+  // If pfPercentage is 0, we assume Employer PF is also 0 or not part of this CTC structure.
+  const employerPF = pfPercentage > 0 ? (basic * 0.12) : 0; 
   
   const special = ctcExBonus - basic - hra - employerPF;
   
+  // Employee PF Calculation (can be 0)
   const employeePF = basic * (pfPercentage / 100);
+  
+  // Professional Tax Calculation
+  const monthlyGross = (basic + hra + Math.max(0, special) + (bonus / 12));
+  const ptMonthly = getProfessionalTax(state, monthlyGross);
+  const professionalTax = ptMonthly * 12;
   
   return {
     annualCTC: ctc,
