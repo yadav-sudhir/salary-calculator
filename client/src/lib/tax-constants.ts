@@ -33,6 +33,9 @@ export const EIGHTH_CPC = {
   EXPECTED_MINIMUM_PAY: 26000
 };
 
+// Based on interim budget 2024-25 and expected trends for 2025-26
+// This structure allows easy updates via JSON modification
+
 export const OLD_REGIME: TaxRegimeData = {
   standardDeduction: 50000,
   rebateLimit: 500000,
@@ -53,8 +56,9 @@ export const OLD_REGIME: TaxRegimeData = {
 };
 
 export const NEW_REGIME: TaxRegimeData = {
-  standardDeduction: 75000,
-  rebateLimit: 1200000,
+  standardDeduction: 75000, // Increased to 75k recently
+  rebateLimit: 1200000, // Tax free up to 7L (rebate limit technically 7L but effectively 0 tax)
+  
   cess: 0.04,
   slabs: [
     { limit: 300000, rate: 0 },
@@ -68,7 +72,7 @@ export const NEW_REGIME: TaxRegimeData = {
     { limit: 5000000, rate: 0.10 },
     { limit: 10000000, rate: 0.15 },
     { limit: 20000000, rate: 0.25 },
-    { limit: Infinity, rate: 0.25 },
+    { limit: Infinity, rate: 0.25 }, // Surcharge capped at 25% for New Regime
   ]
 };
 
@@ -95,7 +99,7 @@ export const PROFESSIONAL_TAX: Record<string, { limit: number, amount: number }[
   ],
   "Tamil Nadu": [
     { limit: 3500, amount: 0 },
-    { limit: 9000, amount: 20 }, // Simplified for monthly
+    { limit: 9000, amount: 20 },
     { limit: 12000, amount: 60 },
     { limit: 15000, amount: 115 },
     { limit: Infinity, amount: 200 }
@@ -127,4 +131,4 @@ export const PROFESSIONAL_TAX: Record<string, { limit: number, amount: number }[
     { limit: 33333, amount: 166 },
     { limit: Infinity, amount: 208 }
   ]
-};
+}; 
