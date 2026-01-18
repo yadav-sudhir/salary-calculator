@@ -25,7 +25,7 @@ import { calculateTax, calculateSalaryStructure, calculateHRAExemption, getProfe
 const formSchema = z.object({
   annualCTC: z.coerce.number().min(0, "CTC must be a positive number"),
   bonus: z.coerce.number().min(0).default(0),
-  pfPercentage: z.coerce.number().min(0).max(100).default(12),
+  pfPercentage: z.coerce.number().min(0).max(100).default(0), // Default to 0 as requested
   hraPercentage: z.coerce.number().min(0).max(100).default(40),
   rentPaid: z.coerce.number().min(0).default(0),
   state: z.string().min(1, "Please select a state").default("Delhi"),
@@ -46,7 +46,7 @@ export default function SalaryCalculator() {
     defaultValues: {
       annualCTC: undefined,
       bonus: 0,
-      pfPercentage: 12,
+      pfPercentage: 0, // Default to 0% PF
       hraPercentage: 40,
       rentPaid: 0,
       state: "Delhi",
@@ -84,18 +84,17 @@ export default function SalaryCalculator() {
       ctc += cpcHike; // Add hike to CTC for calculation
     }
     
-    // Derive Salary Structure
-    const basicSalary = (ctc - bonus) * 0.40;
-    const hraPercentage = Number(data.hraPercentage) || 40;
-    const pfPercentage = Number(data.pfPercentage) || 12;
-    const hraComponent = basicSalary * (hraPercentage / 100);
-    const employeePF = basicSalary * (pfPercentage / 100);
-    const employerPF = basicSalary * 0.12;
+    // Derive Salary Structure using the fixed logic
+    const pfPercentage = Number(data.pfPercentage) || 0;
+    const structure = calculateSalaryStructure(ctc, bonus, pfPercentage, data.state);
     
-    // State-specific Professional Tax
-    const monthlyGross = (ctc - employerPF) / 12;
-    const ptMonthly = getProfessionalTax(data.state, monthlyGross);
-    const professionalTax = ptMonthly * 12;
+    const basicSalary = structure.basicSalary;
+    const hraComponent = structure.hraReceived;
+    const employeePF = structure.pfDeduction;
+    const professionalTax = structure.professionalTax;
+    
+    // Employer PF (only if PF is enabled)
+    const employerPF = pfPercentage > 0 ? (basicSalary * 0.12) : 0;
     
     // Metro/Non-Metro determination
     const metroCities = ["Delhi", "Mumbai", "Kolkata", "Chennai"];
@@ -255,7 +254,7 @@ export default function SalaryCalculator() {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger><Info className="h-3 w-3 text-gray-400" /></TooltipTrigger>
-                        <TooltipContent>Employee contribution (usually 12%)</TooltipContent>
+                        <TooltipContent>Employee contribution (set to 0 if not applicable)</TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                   </div>
@@ -348,7 +347,7 @@ export default function SalaryCalculator() {
                   <IndianRupee className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900">Ready to Calculate?</h3>
-                <p className="text-gray-500 mt-2 max-w-xs">Enter your CTC details on the left to see your detailed salary breakdown.</p>
+                <p className="text-gray-500 mt-2 max-w-xs">Enter your CTC details on the left to see your detailed salary breakdown for FY {FY_YEAR}.</p>
               </motion.div>
             ) : (
               <motion.div
@@ -420,7 +419,7 @@ export default function SalaryCalculator() {
                         </Card>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
-                        <p>Your {Math.round((result.pfDeduction / result.details.basic) * 100)}% contribution to Employee Provident Fund (EPF) deducted each month for retirement benefits.</p>
+                        <p>Your {result.details.basic > 0 ? Math.round((result.pfDeduction / result.details.basic) * 100) : 0}% contribution to Employee Provident Fund (EPF) deducted each month for retirement benefits.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
