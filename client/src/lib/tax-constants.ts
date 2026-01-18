@@ -20,7 +20,7 @@ const currentYear = currentDate.getFullYear();
 const fyStartYear = currentMonth < 3 ? currentYear - 1 : currentYear;
 const fyEndYear = fyStartYear + 1;
 
-export const FY_YEAR = `${fyStartYear}-${fyEndYear.toString().substring(2)}`; // e.g., "2025-26"
+export const FY_YEAR = "2026-27"; // Explicitly set for SEO and accuracy as requested
 
 // 8th Pay Commission Constants
 export const EIGHTH_CPC = {
@@ -56,23 +56,23 @@ export const OLD_REGIME: TaxRegimeData = {
 };
 
 export const NEW_REGIME: TaxRegimeData = {
-  standardDeduction: 75000, // Increased to 75k recently
-  rebateLimit: 1200000, // Tax free up to 7L (rebate limit technically 7L but effectively 0 tax)
-  
+  standardDeduction: 75000, 
+  rebateLimit: 1200000, // Tax free up to 12L in New Regime (Budget 2025)
   cess: 0.04,
   slabs: [
-    { limit: 300000, rate: 0 },
-    { limit: 700000, rate: 0.05 },
-    { limit: 1000000, rate: 0.10 },
-    { limit: 1200000, rate: 0.15 },
-    { limit: 1500000, rate: 0.20 },
+    { limit: 400000, rate: 0 },
+    { limit: 800000, rate: 0.05 },
+    { limit: 1200000, rate: 0.10 },
+    { limit: 1600000, rate: 0.15 },
+    { limit: 2000000, rate: 0.20 },
+    { limit: 2400000, rate: 0.25 },
     { limit: Infinity, rate: 0.30 },
   ],
   surcharge: [
     { limit: 5000000, rate: 0.10 },
     { limit: 10000000, rate: 0.15 },
     { limit: 20000000, rate: 0.25 },
-    { limit: Infinity, rate: 0.25 }, // Surcharge capped at 25% for New Regime
+    { limit: Infinity, rate: 0.25 },
   ]
 };
 
