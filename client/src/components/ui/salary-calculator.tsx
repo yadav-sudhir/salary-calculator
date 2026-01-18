@@ -466,6 +466,9 @@ export default function SalaryCalculator() {
                        <p className="text-xs text-gray-600 mb-2">Step-by-Step In-Hand Calculation:</p>
                        <ol className="text-xs space-y-1 text-gray-700 font-mono">
                          <li>1. Annual CTC: <span className="font-semibold">{formatCurrency(result.details.basic / 0.40)}</span></li>
+                         {result.cpcHike > 0 && (
+                           <li className="text-blue-600">+ 8th CPC Hike: <span className="font-semibold">{formatCurrency(result.cpcHike)}</span></li>
+                         )}
                          <li>2. − Income Tax: <span className="font-semibold">{formatCurrency(result.totalTax)}</span></li>
                          <li>3. − Employee PF: <span className="font-semibold">{formatCurrency(result.pfDeduction * 12)}</span></li>
                          <li>4. − Professional Tax: <span className="font-semibold">{formatCurrency(result.professionalTax)}</span></li>
