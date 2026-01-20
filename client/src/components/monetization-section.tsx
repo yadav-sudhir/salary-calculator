@@ -12,26 +12,26 @@ export default function MonetizationSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* CTA Box 1: Tax Saving Investments */}
+          {/* CTA Box 1: Tax Saving Investments - UPDATED FOR BAJAJ ALLIANZ */}
           <Card className="border-2 border-primary/20 hover:border-primary/50 transition-colors shadow-lg hover:shadow-xl">
             <CardHeader>
               <div className="flex items-start justify-between mb-2">
                 <TrendingUp className="w-8 h-8 text-primary" />
               </div>
-              <CardTitle className="text-xl text-gray-900">Maximize Your Tax Savings</CardTitle>
+              <CardTitle className="text-xl text-gray-900">The ₹25,000 Tax Secret Your CA Missed</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600">
-                Under the Old Regime, you can invest in ELSS mutual funds, insurance, and more to reduce your tax burden significantly. Discover proven strategies used by high earners.
+                Most people only focus on Section 80C. Discover the little-known **Section 80D** loophole that can legally save you an extra ₹25,000+ on your taxes this year. It's not what you think.
               </p>
               <Button 
                 className="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2"
-                onClick={() => window.open("#", "_blank")}
+                onClick={() => window.open("https://track.vcommission.com/click?campaign_id=12825&pub_id=125411", "_blank" )}
               >
-                Explore Top Tax-Saving Investments
+                Unlock the Extra Tax Savings Now
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <p className="text-xs text-gray-500 text-center">Limited time: Free consultation offer</p>
+              <p className="text-xs text-gray-500 text-center">Limited time: Get a free quote and instant tax estimate.</p>
             </CardContent>
           </Card>
 
