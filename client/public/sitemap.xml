@@ -3,7 +3,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://salarycalc.in/</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Blog Listing Page -->
   <url>
     <loc>https://salarycalc.in/blog</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,7 +19,15 @@
   <!-- Blog Article: How to Save Tax for Salaried Employees 2025-26 -->
   <url>
     <loc>https://salarycalc.in/blog/how-to-save-tax-for-salaried-employees-2025-26</loc>
-    <lastmod>2026-01-13</lastmod>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Article: 8th Pay Commission Expected Date & Salary Hike -->
+  <url>
+    <loc>https://salarycalc.in/blog/8th-pay-commission-expected-date-salary-hike-explained</loc>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
