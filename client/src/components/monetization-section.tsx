@@ -22,7 +22,7 @@ export default function MonetizationSection() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600">
-                Most people only focus on Section 80C. Discover the little-known **Section 80D** loophole that can legally save you an extra ₹25,000+ on your taxes this year. It's not what you think.
+                Most people only focus on Section 80C. Discover the little-known Section 80D loophole that can legally save you an extra ₹25,000+ on your taxes this year. It's not what you think.
               </p>
               <Button 
                 className="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2"
