@@ -77,16 +77,16 @@ export default function Home() {
            </div>
         </div>
 
+        {/* Monetization Section - MOVED ABOVE FAQ FOR BETTER CONVERSION */}
+        <section className="px-4">
+          <MonetizationSection />
+        </section>
+
         {/* FAQ Section */}
         <section id="faq" className="py-12 bg-gray-50">
            <div className="px-4">
              <FAQ />
            </div>
-        </section>
-
-        {/* Monetization Section */}
-        <section className="px-4">
-          <MonetizationSection />
         </section>
 
         {/* SEO Content Section */}
@@ -95,14 +95,18 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Most Accurate 8th Pay Commission & In-Hand Salary Calculator for India (FY 2026-27)</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Stop guessing your take-home pay and start planning your future. While many calculators provide generic estimates, our tool is built to handle the complexities of the Indian payroll system with precision. We provide a transparent, line-by-line breakdown of every deduction, ensuring you see the exact <span className="font-bold">In-Hand Salary</span> that will hit your bank account. 
-<br /><br />
+  
+  
+
 Our engine is constantly updated to reflect the most recent <span className="font-bold">8th Pay Commission</span> projections, the latest <span className="font-bold">FY 2026-27</span> tax slabs (including the new ₹12 Lakh rebate), and accurate <span className="font-bold">state-wise Professional Tax</span> rules. Whether you are a private sector professional or a central government employee, our <span className="font-bold">8th CPC Salary Calculator</span> is designed to be your most reliable financial companion.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Instantly Compare Old vs. New Tax Regime for Maximum Savings</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Deciding between the Old and New Tax Regime is often the most significant financial choice you'll make each year. With the introduction of the <span className="font-bold">FY 2026-27</span> tax rules, the stakes are higher than ever. Our unique comparison feature takes the guesswork out of the equation, instantly showing your tax liability under both systems. 
-<br /><br />
+  
+  
+
 We factor in your <span className="font-bold">80C investments, HRA exemptions, and standard deductions</span> to give you a clear winner. If you're expecting an <span className="font-bold">8th Pay Commission salary hike</span>, our tool will show you exactly how that increase shifts your tax burden, helping you choose the regime that maximizes your savings and keeps more money in your pocket.
             </p>
 
