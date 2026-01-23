@@ -3,19 +3,27 @@
   <!-- Home Page -->
   <url>
     <loc>https://salarycalc.in/</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Blog Listing Page -->
   <url>
     <loc>https://salarycalc.in/blog</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  
+  <!-- Blog Article: In-Hand Salary for 12 LPA in India (FY 2026-27) -->
+  <url>
+    <loc>https://salarycalc.in/blog/in-hand-salary-12-lpa-india-2026-27</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
   <!-- Blog Article: How to Save Tax for Salaried Employees 2025-26 -->
   <url>
     <loc>https://salarycalc.in/blog/how-to-save-tax-for-salaried-employees-2025-26</loc>
@@ -23,7 +31,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  
   <!-- Blog Article: 8th Pay Commission Expected Date & Salary Hike -->
   <url>
     <loc>https://salarycalc.in/blog/8th-pay-commission-expected-date-salary-hike-explained</loc>
