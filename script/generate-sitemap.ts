@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
+// Load posts from posts.json to ensure sitemap is always up to date
+const postsPath = path.join(process.cwd(), 'client', 'src', 'posts.json');
+const posts = JSON.parse(fs.readFileSync(postsPath, 'utf-8'));
+
 const STATES = [
   { slug: 'maharashtra', name: 'Maharashtra' },
   { slug: 'karnataka', name: 'Karnataka' },
@@ -32,24 +36,6 @@ const STATES = [
   { slug: 'arunachal-pradesh', name: 'Arunachal Pradesh' },
 ];
 
-const BLOG_POSTS = [
-  {
-    slug: 'how-to-save-tax-for-salaried-employees-2025-26',
-    lastmod: '2026-01-15',
-    priority: 0.8,
-  },
-  {
-    slug: 'best-investment-options-for-salaried-employees-2025-26',
-    lastmod: '2026-01-14',
-    priority: 0.8,
-  },
-  {
-    slug: '8th-pay-commission-salary-calculator-government-employees',
-    lastmod: '2026-01-18',
-    priority: 0.9,
-  },
-];
-
 interface SitemapEntry {
   loc: string;
   lastmod: string;
@@ -59,11 +45,12 @@ interface SitemapEntry {
 
 function generateSitemap(): string {
   const entries: SitemapEntry[] = [];
+  const today = new Date().toISOString().split('T')[0];
 
   // Home page
   entries.push({
     loc: 'https://salarycalc.in/',
-    lastmod: new Date().toISOString().split('T')[0],
+    lastmod: today,
     changefreq: 'weekly',
     priority: 1.0,
   });
@@ -71,18 +58,18 @@ function generateSitemap(): string {
   // Blog listing page
   entries.push({
     loc: 'https://salarycalc.in/blog',
-    lastmod: new Date().toISOString().split('T')[0],
+    lastmod: today,
     changefreq: 'weekly',
     priority: 0.9,
   });
 
-  // Blog posts
-  BLOG_POSTS.forEach((post) => {
+  // Blog posts from posts.json
+  posts.forEach((post: any) => {
     entries.push({
       loc: `https://salarycalc.in/blog/${post.slug}`,
-      lastmod: post.lastmod,
+      lastmod: today, // Using today as lastmod for simplicity, or parse post.date if available in ISO
       changefreq: 'monthly',
-      priority: post.priority,
+      priority: 0.8,
     });
   });
 
@@ -90,7 +77,7 @@ function generateSitemap(): string {
   STATES.forEach((state) => {
     entries.push({
       loc: `https://salarycalc.in/salary-calculator/${state.slug}`,
-      lastmod: new Date().toISOString().split('T')[0],
+      lastmod: today,
       changefreq: 'monthly',
       priority: 0.7,
     });
