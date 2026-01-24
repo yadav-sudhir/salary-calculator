@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       <Helmet>
-        <title>SalaryCalc.in: 8th Pay Commission & In-Hand Salary Calculator India 2026-27</title>
+        <title>SalaryCalc.in | 8th Pay Commission & Salary Calculator 2026-27</title>
         <meta name="description" content="Accurate 8th Pay Commission & In-Hand Salary Calculator for India (FY 2026-27). Compare Old vs New Tax Regime, calculate CTC to take-home pay, and estimate 8th CPC hike impact." />
       </Helmet>
       {/* Dynamic Year Banner */}
