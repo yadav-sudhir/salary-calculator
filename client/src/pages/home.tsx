@@ -5,30 +5,25 @@ import FAQ from "@/components/faq";
 import MonetizationSection from "@/components/monetization-section";
 import { FY_YEAR } from "@/lib/tax-constants";
 import posts from '../posts.json';
+import Navbar from "@/components/navbar";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
+  // Sort posts by ID descending to show latest first
+  const latestPosts = [...posts].sort((a, b) => b.id - a.id);
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
+      <Helmet>
+        <title>SalaryCalc.in: 8th Pay Commission & In-Hand Salary Calculator India 2026-27</title>
+        <meta name="description" content="Accurate 8th Pay Commission & In-Hand Salary Calculator for India (FY 2026-27). Compare Old vs New Tax Regime, calculate CTC to take-home pay, and estimate 8th CPC hike impact." />
+      </Helmet>
       {/* Dynamic Year Banner */}
       <div className="bg-gradient-to-r from-primary to-blue-600 text-white py-2 text-center text-sm font-medium shadow-md">
         <span>🚀 Updated for FY {FY_YEAR} (Assessment Year {parseInt(FY_YEAR.split('-')[0]) + 1}-{parseInt(FY_YEAR.split('-')[1]) + 1})</span>
       </div>
 
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-50/50 backdrop-blur-xl bg-white/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">₹</div>
-            <span className="font-heading font-bold text-xl tracking-tight text-gray-900">Salary<span className="text-primary">Calc</span></span>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
-            <a href="#calculator" className="hover:text-primary transition-colors">Calculator</a>
-            <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
-            {/* Added Blog Link below */}
-            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="pb-20">
         {/* Hero Section */}
@@ -139,7 +134,7 @@ We factor in your <span className="font-bold">80C investments, HRA exemptions, a
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {posts.slice(0, 3).map((post) => (
+              {latestPosts.slice(0, 3).map((post) => (
                 <Link key={post.id} href={`/blog/${post.slug}`} className="group">
                   <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 transition-all hover:shadow-md hover:border-primary/20">
                     <span className="text-sm text-gray-500">{post.date}</span>
