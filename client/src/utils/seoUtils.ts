@@ -43,13 +43,13 @@ export const removeSchema = (id: string) => {
 export const webPageCalculatorSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "In-Hand Salary Calculator After Tax India 2025–26 | Old vs New Tax Regime",
-  "description": "Calculate your exact take-home salary instantly with our updated FY 2025–26 in-hand salary calculator. Compare old vs new tax regime, including HRA & PF deductions.",
+  "name": "SalaryCalc.in: In-Hand Salary Calculator India 2026-27 | Old vs New Tax Regime",
+  "description": "Calculate your exact take-home salary instantly with our updated FY 2026-27 in-hand salary calculator. Compare old vs new tax regime, including HRA & PF deductions.",
   "url": "https://salarycalc.in/",
   "mainEntity": {
     "@type": "Calculator",
-    "name": "In-Hand Salary Calculator India 2025-26",
-    "description": "An online tool to calculate in-hand salary after tax in India for FY 2025-26, comparing old and new tax regimes.",
+    "name": "SalaryCalc.in: In-Hand Salary Calculator India 2026-27",
+    "description": "An online tool to calculate in-hand salary after tax in India for FY 2026-27, comparing old and new tax regimes.",
     "url": "https://salarycalc.in/",
     "potentialAction": {
       "@type": "CalculateAction",
@@ -84,10 +84,10 @@ export const faqPageSchema = {
     },
     {
       "@type": "Question",
-      "name": "Old vs New Tax Regime: Which is better for FY 2025-26?",
+      "name": "Old vs New Tax Regime: Which is better for FY 2026-27?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The better tax regime (Old or New) for FY 2025-26 depends on individual financial situations, particularly the amount of deductions and exemptions an individual can claim. The Old Regime allows various deductions (e.g., 80C, HRA, 80D), while the New Regime offers lower tax rates but fewer exemptions. It's recommended to use a calculator to compare both options based on your specific income and investments."
+        "text": "The better tax regime (Old or New) for FY 2026-27 depends on individual financial situations, particularly the amount of deductions and exemptions an individual can claim. The Old Regime allows various deductions (e.g., 80C, HRA, 80D), while the New Regime offers lower tax rates but fewer exemptions. It's recommended to use a calculator to compare both options based on your specific income and investments."
       }
     },
     {
@@ -103,7 +103,7 @@ export const faqPageSchema = {
       "name": "Is the Standard Deduction applicable in the New Regime?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Initially, the Standard Deduction was not applicable in the New Tax Regime. However, for FY 2023-24 onwards, a standard deduction of ₹50,000 is allowed under the New Tax Regime for salaried individuals. It's important to verify the latest budget updates for FY 2025-26."
+        "text": "Yes, for FY 2026-27, a standard deduction of ₹75,000 is allowed under the New Tax Regime for salaried individuals. This was increased from ₹50,000 in previous budgets to make the New Regime more attractive."
       }
     }
   ]
