@@ -39,4 +39,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Article: How to Pay Zero Income Tax on a 15 Lakh Salary in India -->
+  <url>
+    <loc>https://salarycalc.in/blog/how-to-pay-zero-tax-on-15-lakh-salary-india-2026-27</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
