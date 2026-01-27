@@ -47,4 +47,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Article: Budget 2026: Why Your In-Hand Salary Might Change (And How to Fix It) -->
+  <url>
+    <loc>https://salarycalc.in/blog/budget-2026-expectations-salaried-employees-tax-hike-relief</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Article: The ₹25,000 Tax Secret Your CA Missed: How Section 80D Can Save You an Extra ₹75,000+ in 2026 -->
+  <url>
+    <loc>https://salarycalc.in/blog/section-80d-tax-saving-secret-2026</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Article: The 2026 Wealth Shift: Navigating the 8th Pay Commission and India’s New Tax Danger Zones -->
+  <url>
+    <loc>https://salarycalc.in/blog/8th-pay-commission-tax-saving-secrets-2026</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
