@@ -71,4 +71,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Article: Budget 2026: The ₹81,000 Standard Deduction Hike That Could Change Your Tax Bill -->
+  <url>
+    <loc>https://salarycalc.in/blog/budget-2026-expectations-standard-deduction-hike</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
