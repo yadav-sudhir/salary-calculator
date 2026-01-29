@@ -79,4 +79,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Article: 15 LPA Salary: How to make Your Entire Income Tax Free in 2026 (New Regime Secret) -->
+  <url>
+    <loc>https://salarycalc.in/blog/15-lpa-salary-tax-free-india-2026-27</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
