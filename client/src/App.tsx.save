@@ -12,11 +12,6 @@ import Contact from "@/pages/contact";
 import Calculator from "@/pages/Calculator";
 import BlogPage from "@/pages/BlogPage";
 import PostPage from "@/pages/PostPage";
-import CTCReport from './pages/products/CTCReport';
-import NegotiationLetter from './pages/products/NegotiationLetter';
-import TaxStrategy from './pages/products/TaxStrategy';
-import About from './pages/About';
-import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function Router() {
   return (
@@ -28,11 +23,6 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/contact" component={Contact} />
-      <Route path="/products/ctc-report" component={CTCReport} />
-      <Route path="/products/negotiation-letter" component={NegotiationLetter} />
-      <Route path="/products/tax-strategy" component={TaxStrategy} />
-      <Route path="/about" component={About} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );
