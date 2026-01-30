@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -7,6 +7,12 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -15,6 +21,12 @@ export default function Navbar() {
     { href: "/#faq", label: "FAQ" },
     { href: "/blog", label: "Blog" },
     { href: "/privacy", label: "Privacy" },
+  ];
+
+  const productLinks = [
+    { href: "/products/ctc-report", label: "CTC Report", price: "₹799", icon: "📊" },
+    { href: "/products/negotiation-letter", label: "Negotiation Letter", price: "₹1,499", icon: "💼" },
+    { href: "/products/tax-strategy", label: "Tax Strategy", price: "₹2,499", icon: "💰" },
   ];
 
   return (
@@ -31,7 +43,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -41,6 +53,29 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          
+          {/* Products Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 hover:text-primary transition-colors focus:outline-none">
+              Products
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-64">
+              {productLinks.map((product) => (
+                <DropdownMenuItem key={product.href} asChild>
+                  <Link href={product.href}>
+                    <div className="flex items-center justify-between w-full px-2 py-2 cursor-pointer">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{product.icon}</span>
+                        <span className="font-medium text-gray-900 text-sm">{product.label}</span>
+                      </div>
+                      <span className="text-xs font-bold text-primary">{product.price}</span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Mobile Navigation */}
@@ -71,6 +106,26 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+                
+                {/* Products Section in Mobile */}
+                <div className="border-t border-gray-100 pt-4 mt-2">
+                  <div className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-3">
+                    Products
+                  </div>
+                  {productLinks.map((product) => (
+                    <Link
+                      key={product.href}
+                      href={product.href}
+                      className="flex items-center justify-between py-3 border-b border-gray-50 hover:text-primary transition-colors"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{product.icon}</span>
+                        <span className="text-sm font-medium">{product.label}</span>
+                      </div>
+                      <span className="text-sm font-bold text-primary">{product.price}</span>
+                    </Link>
+                  ))}
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
