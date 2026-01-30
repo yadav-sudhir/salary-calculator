@@ -65,6 +65,197 @@ export default function Home() {
            <SalaryCalculator />
         </section>
 
+        {/* 🆕 PREMIUM PRODUCTS SECTION - NEW! */}
+        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              >
+                Get Your Personalized Salary Report
+              </motion.h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Professional reports delivered instantly to your email. AI-powered analysis with actionable insights.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* CTC Report */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:border-primary/30 transition-all group"
+              >
+                <div className="text-5xl mb-4">📊</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">CTC Breakdown Report</h3>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-4xl font-bold text-primary">₹799</span>
+                  <span className="text-gray-400 line-through">₹1,299</span>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Complete 8-page breakdown of your salary showing every deduction, tax calculation, and monthly in-hand amount.
+                </p>
+                <ul className="space-y-3 mb-8 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Detailed CTC component analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Monthly take-home calculation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>City-wise cost of living analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Tax optimization strategies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Instant email delivery (2 min)</span>
+                  </li>
+                </ul>
+                <Link href="/products/ctc-report">
+                  <a className="block w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl text-center transition-all group-hover:scale-[1.02]">
+                    Get CTC Report →
+                  </a>
+                </Link>
+              </motion.div>
+
+              {/* Negotiation Letter */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-white rounded-2xl shadow-xl border-2 border-primary p-8 hover:shadow-2xl transition-all relative group"
+              >
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                  MOST POPULAR
+                </div>
+                <div className="text-5xl mb-4">💼</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Salary Negotiation Letter</h3>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-4xl font-bold text-primary">₹1,499</span>
+                  <span className="text-gray-400 line-through">₹2,499</span>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Professional data-driven letter that helps you negotiate 15-30% higher salary with market research included.
+                </p>
+                <ul className="space-y-3 mb-8 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>3-page professional business letter</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Industry benchmarking data</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Value proposition highlighting</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>ROI justification for employer</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Ready to send immediately</span>
+                  </li>
+                </ul>
+                <Link href="/products/negotiation-letter">
+                  <a className="block w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 rounded-xl text-center transition-all group-hover:scale-[1.02] shadow-md">
+                    Get Negotiation Letter →
+                  </a>
+                </Link>
+              </motion.div>
+
+              {/* Tax Strategy */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:border-primary/30 transition-all group"
+              >
+                <div className="text-5xl mb-4">💰</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Tax-Saving Strategy</h3>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-4xl font-bold text-primary">₹2,499</span>
+                  <span className="text-gray-400 line-through">₹3,999</span>
+                </div>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Comprehensive 12-page tax strategy report that can legally save you ₹50,000+ annually with 2026 tax laws.
+                </p>
+                <ul className="space-y-3 mb-8 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Complete tax optimization analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Section 80C, 80D strategies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Investment recommendations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Month-by-month action plan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span>Updated for FY 2026-27</span>
+                  </li>
+                </ul>
+                <Link href="/products/tax-strategy">
+                  <a className="block w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl text-center transition-all group-hover:scale-[1.02]">
+                    Get Tax Strategy →
+                  </a>
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Trust Badges */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-8 text-center"
+            >
+              <div className="flex flex-col items-center">
+                <div className="text-3xl mb-2">⭐</div>
+                <div className="font-bold text-gray-900">847+ Customers</div>
+                <div className="text-sm text-gray-600">Satisfied professionals</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-3xl mb-2">⚡</div>
+                <div className="font-bold text-gray-900">2-Min Delivery</div>
+                <div className="text-sm text-gray-600">Instant via email</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-3xl mb-2">💯</div>
+                <div className="font-bold text-gray-900">Money-Back</div>
+                <div className="text-sm text-gray-600">7-day guarantee</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-3xl mb-2">🔒</div>
+                <div className="font-bold text-gray-900">100% Secure</div>
+                <div className="text-sm text-gray-600">Bank-grade encryption</div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Ad Placeholder Middle */}
         <div className="max-w-4xl mx-auto px-4 my-12">
            <div className="bg-gray-100 rounded-lg h-[90px] w-full flex items-center justify-center text-gray-400 border border-gray-200 border-dashed text-sm">
@@ -161,16 +352,23 @@ We factor in your <span className="font-bold">80C investments, HRA exemptions, a
                <div className="w-6 h-6 bg-primary rounded flex items-center justify-center text-white font-bold text-sm">₹</div>
                <span className="font-heading font-bold text-lg text-gray-900">SalaryCalc</span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-500 text-sm leading-relaxed max-w-xs mb-4">
               Empowering Indian employees with transparent salary insights. Updated for the <span className="font-bold">8th Pay Commission</span> and <span className="font-bold">FY 2026-27</span> tax rules.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">Legal</h4>
+            <h4 className="font-bold text-gray-900 mb-4">Products</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><Link href="/products/ctc-report" className="hover:text-primary">CTC Breakdown Report</Link></li>
+              <li><Link href="/products/negotiation-letter" className="hover:text-primary">Negotiation Letter</Link></li>
+              <li><Link href="/products/tax-strategy" className="hover:text-primary">Tax Strategy Report</Link></li>
+            </ul>
+            <h4 className="font-bold text-gray-900 mb-4 mt-6">Legal</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><Link href="/privacy" className="hover:text-primary">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-primary">Terms & Conditions</Link></li>
               <li><Link href="/contact" className="hover:text-primary">Contact Us</Link></li>
+              <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
             </ul>
           </div>
           <div>
