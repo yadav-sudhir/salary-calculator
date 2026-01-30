@@ -12,15 +12,20 @@ import Contact from "@/pages/contact";
 import Calculator from "@/pages/Calculator";
 import BlogPage from "@/pages/BlogPage";
 import PostPage from "@/pages/PostPage";
+
+// New Product Pages
 import CTCReport from './pages/products/CTCReport';
 import NegotiationLetter from './pages/products/NegotiationLetter';
 import TaxStrategy from './pages/products/TaxStrategy';
+
+// New Essential Pages
 import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function Router() {
   return (
     <Switch>
+      {/* Existing Routes */}
       <Route path="/" component={Home} />
       <Route path="/calculator" component={Calculator} />
       <Route path="/blog" component={BlogPage} />
@@ -28,11 +33,17 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/contact" component={Contact} />
+      
+      {/* New Product Routes - Revenue Pages */}
       <Route path="/products/ctc-report" component={CTCReport} />
       <Route path="/products/negotiation-letter" component={NegotiationLetter} />
       <Route path="/products/tax-strategy" component={TaxStrategy} />
+      
+      {/* New Essential Routes */}
       <Route path="/about" component={About} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      
+      {/* 404 Page - Keep Last */}
       <Route component={NotFound} />
     </Switch>
   );
