@@ -22,6 +22,9 @@ import TaxStrategy from './pages/products/TaxStrategy';
 import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
+// Thank You Page
+import ThankYou from './pages/ThankYou';
+
 function Router() {
   return (
     <Switch>
@@ -42,6 +45,9 @@ function Router() {
       {/* New Essential Routes */}
       <Route path="/about" component={About} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      
+      {/* Thank You Page - After Payment */}
+      <Route path="/thank-you" component={ThankYou} />
       
       {/* 404 Page - Keep Last */}
       <Route component={NotFound} />
