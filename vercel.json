@@ -1,15 +1,5 @@
 {
-  "functions": {
-    "client/src/pages/api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/client/src/pages/api/$1"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
