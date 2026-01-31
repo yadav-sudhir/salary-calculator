@@ -339,3 +339,4 @@ export default function CTCReport() {
     </div>
   );
 }
+// Updated to live mode
