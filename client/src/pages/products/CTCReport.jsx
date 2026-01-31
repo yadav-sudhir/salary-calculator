@@ -74,7 +74,7 @@ export default function CTCReport() {
 
     const options = {
       key: razorpayKey,
-      amount: 79900, // ₹799 in paise
+      amount: 100, // ₹1 in paise (TESTING)
       currency: 'INR',
       name: 'SalaryCalc',
       description: 'CTC to In-Hand Report',
