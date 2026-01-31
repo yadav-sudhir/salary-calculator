@@ -1,7 +1,9 @@
 // src/pages/products/CTCReport.jsx
 // CTC to In-Hand Salary Report - ₹799
+// FIXED: Razorpay script loading + Affiliate link added
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export default function CTCReport() {
   const [formData, setFormData] = useState({
@@ -15,6 +17,30 @@ export default function CTCReport() {
     designation: ''
   });
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  // Load Razorpay script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('Razorpay script loaded successfully');
+      setScriptLoaded(true);
+    };
+    script.onerror = () => {
+      console.error('Failed to load Razorpay script');
+      alert('Payment system failed to load. Please refresh the page.');
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,13 +56,30 @@ export default function CTCReport() {
   const handlePayment = (e) => {
     e.preventDefault();
     
+    // Check if Razorpay script is loaded
+    if (!scriptLoaded || typeof window.Razorpay === 'undefined') {
+      alert('Payment system is still loading. Please wait a moment and try again.');
+      return;
+    }
+
+    // Check if key is available
+    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+    if (!razorpayKey) {
+      alert('Payment system configuration error. Please contact support.');
+      console.error('VITE_RAZORPAY_KEY_ID not found');
+      return;
+    }
+
+    setLoading(true);
+
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
-      amount: 79900,
+      key: razorpayKey,
+      amount: 79900, // ₹799 in paise
       currency: 'INR',
       name: 'SalaryCalc',
       description: 'CTC to In-Hand Report',
       handler: function(response) {
+        console.log('Payment successful:', response);
         window.location.href = '/thank-you?product=ctc';
       },
       prefill: {
@@ -52,15 +95,33 @@ export default function CTCReport() {
         industry: formData.industry,
         designation: formData.designation
       },
-      theme: { color: '#2563eb' }
+      theme: { color: '#2563eb' },
+      modal: {
+        ondismiss: function() {
+          setLoading(false);
+          console.log('Payment cancelled');
+        }
+      }
     };
 
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    try {
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+      setLoading(false);
+    } catch (error) {
+      console.error('Razorpay error:', error);
+      alert('Failed to open payment window. Please try again.');
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>CTC Breakdown Report - ₹799 | SalaryCalc</title>
+        <meta name="description" content="Get detailed 8-page CTC breakdown report with monthly in-hand salary calculation, tax optimization, and financial planning." />
+      </Helmet>
+
       {/* Hero */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -122,6 +183,24 @@ export default function CTCReport() {
           </div>
         </div>
 
+        {/* Affiliate Insurance CTA */}
+        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl p-8 mb-12">
+          <h3 className="text-2xl font-bold mb-3">💡 The ₹25,000 Tax Secret Your CA Missed</h3>
+          <p className="mb-4 opacity-90">
+            Most people only focus on Section 80C. Discover the little-known Section 80D loophole 
+            that can legally save you an extra ₹25,000+ on your taxes this year.
+          </p>
+          <a 
+            href="https://track.vcommission.com/click?campaign_id=12825&pub_id=125411"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-purple-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
+          >
+            Unlock Extra Tax Savings →
+          </a>
+          <p className="text-sm mt-2 opacity-75">Limited time: Free quote + instant tax estimate</p>
+        </div>
+
         {/* Testimonials */}
         <div className="bg-blue-50 rounded-xl p-8 mb-12">
           <h2 className="text-3xl font-bold mb-8 text-center">Customer Reviews</h2>
@@ -141,24 +220,6 @@ export default function CTCReport() {
           </div>
         </div>
 
-        {/* Affiliate Insurance CTA */}
-        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl p-8 mb-12">
-          <h3 className="text-2xl font-bold mb-3">💡 The ₹25,000 Tax Secret Your CA Missed</h3>
-          <p className="mb-4 opacity-90">
-            Most people only focus on Section 80C. Discover the little-known Section 80D loophole 
-            that can legally save you an extra ₹25,000+ on your taxes this year.
-          </p>
-          <a 
-            href="YOUR_AFFILIATE_LINK_HERE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-purple-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
-          >
-            Unlock Extra Tax Savings →
-          </a>
-          <p className="text-sm mt-2 opacity-75">Limited time: Free quote + instant tax estimate</p>
-        </div>
-
         {/* Form */}
         {showForm && (
           <div id="form" className="bg-white rounded-xl shadow-lg p-8 mb-12 border-2 border-blue-600">
@@ -171,7 +232,7 @@ export default function CTCReport() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border-2 rounded-lg"
+                className="w-full p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
               />
               <input
                 type="email"
@@ -180,7 +241,7 @@ export default function CTCReport() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border-2 rounded-lg"
+                className="w-full p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
               />
               <input
                 type="tel"
@@ -189,7 +250,7 @@ export default function CTCReport() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border-2 rounded-lg"
+                className="w-full p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
               />
               <input
                 type="number"
@@ -198,10 +259,15 @@ export default function CTCReport() {
                 value={formData.ctc}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border-2 rounded-lg"
+                className="w-full p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
               />
               <div className="grid md:grid-cols-2 gap-4">
-                <select name="city" value={formData.city} onChange={handleChange} className="p-3 border-2 rounded-lg">
+                <select 
+                  name="city" 
+                  value={formData.city} 
+                  onChange={handleChange} 
+                  className="p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
+                >
                   <option>Bangalore</option>
                   <option>Mumbai</option>
                   <option>Delhi</option>
@@ -215,11 +281,16 @@ export default function CTCReport() {
                   placeholder="Experience (years)"
                   value={formData.experience}
                   onChange={handleChange}
-                  className="p-3 border-2 rounded-lg"
+                  className="p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                <select name="industry" value={formData.industry} onChange={handleChange} className="p-3 border-2 rounded-lg">
+                <select 
+                  name="industry" 
+                  value={formData.industry} 
+                  onChange={handleChange} 
+                  className="p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
+                >
                   <option>IT/Software</option>
                   <option>Finance</option>
                   <option>Healthcare</option>
@@ -232,14 +303,15 @@ export default function CTCReport() {
                   placeholder="Designation"
                   value={formData.designation}
                   onChange={handleChange}
-                  className="p-3 border-2 rounded-lg"
+                  className="p-3 border-2 rounded-lg focus:border-blue-500 outline-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg text-lg transition"
+                disabled={loading || !scriptLoaded}
+                className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg text-lg transition"
               >
-                Pay ₹799 & Get Report
+                {loading ? 'Processing...' : !scriptLoaded ? 'Loading Payment...' : 'Pay ₹799 & Get Report'}
               </button>
               <p className="text-center text-sm text-gray-600">
                 ✅ Secure payment | ✅ 2-min delivery | ✅ Money-back guarantee
@@ -264,8 +336,6 @@ export default function CTCReport() {
           ))}
         </div>
       </div>
-
-      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     </div>
   );
 }
