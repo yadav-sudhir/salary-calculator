@@ -1,46 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ============================================================
+       CORE PAGES
+       ============================================================ -->
+
   <!-- Home Page -->
   <url>
     <loc>https://salarycalc.in/</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Blog Listing Page -->
   <url>
     <loc>https://salarycalc.in/blog</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Blog Article: In-Hand Salary for 12 LPA in India (FY 2026-27) -->
+
+  <!-- ============================================================
+       PRODUCT PAGES
+       ============================================================ -->
+
+  <!-- Product: CTC Report -->
+  <url>
+    <loc>https://salarycalc.in/products/ctc-report</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product: Negotiation Letter -->
+  <url>
+    <loc>https://salarycalc.in/products/negotiation-letter</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Product: Tax Strategy -->
+  <url>
+    <loc>https://salarycalc.in/products/tax-strategy</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ============================================================
+       BLOG ARTICLES
+       ============================================================ -->
+
+  <!-- Blog: Budget 2026 Salary Impact Calculator [NEW - Budget Day] -->
+  <url>
+    <loc>https://salarycalc.in/blog/budget-2026-salary-impact-calculator</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog: In-Hand Salary for 12 LPA in India (FY 2026-27) -->
   <url>
     <loc>https://salarycalc.in/blog/in-hand-salary-12-lpa-india-2026-27</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Blog Article: How to Save Tax for Salaried Employees 2025-26 -->
+
+  <!-- Blog: 15 LPA Salary Tax Free 2026 -->
   <url>
-    <loc>https://salarycalc.in/blog/how-to-save-tax-for-salaried-employees-2025-26</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Blog Article: 8th Pay Commission Expected Date & Salary Hike -->
-  <url>
-    <loc>https://salarycalc.in/blog/8th-pay-commission-expected-date-salary-hike-explained</loc>
-    <lastmod>2026-01-19</lastmod>
+    <loc>https://salarycalc.in/blog/15-lpa-salary-tax-free-india-2026-27</loc>
+    <lastmod>2026-01-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: How to Pay Zero Income Tax on a 15 Lakh Salary in India -->
+  <!-- Blog: How to Pay Zero Tax on 15 Lakh Salary -->
   <url>
     <loc>https://salarycalc.in/blog/how-to-pay-zero-tax-on-15-lakh-salary-india-2026-27</loc>
     <lastmod>2026-01-20</lastmod>
@@ -48,15 +85,15 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: Budget 2026: Why Your In-Hand Salary Might Change (And How to Fix It) -->
+  <!-- Blog: How to Save Tax for Salaried Employees 2025-26 -->
   <url>
-    <loc>https://salarycalc.in/blog/budget-2026-expectations-salaried-employees-tax-hike-relief</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://salarycalc.in/blog/how-to-save-tax-for-salaried-employees-2025-26</loc>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: The ₹25,000 Tax Secret Your CA Missed: How Section 80D Can Save You an Extra ₹75,000+ in 2026 -->
+  <!-- Blog: Section 80D Tax Saving Secret 2026 -->
   <url>
     <loc>https://salarycalc.in/blog/section-80d-tax-saving-secret-2026</loc>
     <lastmod>2026-01-21</lastmod>
@@ -64,15 +101,15 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: The 2026 Wealth Shift: Navigating the 8th Pay Commission and India’s New Tax Danger Zones -->
+  <!-- Blog: Budget 2026 Expectations – Salaried Employees -->
   <url>
-    <loc>https://salarycalc.in/blog/8th-pay-commission-tax-saving-secrets-2026</loc>
+    <loc>https://salarycalc.in/blog/budget-2026-expectations-salaried-employees-tax-hike-relief</loc>
     <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: Budget 2026: The ₹81,000 Standard Deduction Hike That Could Change Your Tax Bill -->
+  <!-- Blog: Budget 2026 Standard Deduction Hike -->
   <url>
     <loc>https://salarycalc.in/blog/budget-2026-expectations-standard-deduction-hike</loc>
     <lastmod>2026-01-22</lastmod>
@@ -80,11 +117,20 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Article: 15 LPA Salary: How to make Your Entire Income Tax Free in 2026 (New Regime Secret) -->
+  <!-- Blog: 8th Pay Commission Expected Date & Salary Hike -->
   <url>
-    <loc>https://salarycalc.in/blog/15-lpa-salary-tax-free-india-2026-27</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://salarycalc.in/blog/8th-pay-commission-expected-date-salary-hike-explained</loc>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog: 8th Pay Commission Tax Saving Secrets 2026 -->
+  <url>
+    <loc>https://salarycalc.in/blog/8th-pay-commission-tax-saving-secrets-2026</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
