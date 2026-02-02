@@ -75,7 +75,10 @@ export default function CTCReport() {
       description: 'CTC to In-Hand Report',
       handler: function(response) {
         console.log('Payment successful:', response);
-        window.location.href = '/thank-you?product=ctc';
+        
+        // Redirect to thank you page
+        // Webhook will automatically handle email sending
+        window.location.href = `/thank-you?product=ctc&payment_id=${response.razorpay_payment_id}`;
       },
       prefill: {
         name: formData.name,
@@ -84,6 +87,7 @@ export default function CTCReport() {
       },
       notes: {
         product: 'CTC_REPORT',
+        name: formData.name,
         ctc: formData.ctc,
         city: formData.city,
         experience: formData.experience,
