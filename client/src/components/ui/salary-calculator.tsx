@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,7 +13,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
-import { Info, IndianRupee, ArrowRight, Download, RefreshCw, HelpCircle, Share2, Check, TrendingUp } from "lucide-react";
+import { Info, IndianRupee, ArrowRight, Download, RefreshCw, HelpCircle, Share2, Check, TrendingUp, AlertCircle, Sparkles, FileText, CheckCircle2 } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -25,7 +26,7 @@ import { calculateTax, calculateSalaryStructure, calculateHRAExemption, getProfe
 const formSchema = z.object({
   annualCTC: z.coerce.number().min(0, "CTC must be a positive number"),
   bonus: z.coerce.number().min(0).default(0),
-  pfPercentage: z.coerce.number().min(0).max(100).default(0), // Default to 0 as requested
+  pfPercentage: z.coerce.number().min(0).max(100).default(0),
   hraPercentage: z.coerce.number().min(0).max(100).default(40),
   rentPaid: z.coerce.number().min(0).default(0),
   state: z.string().min(1, "Please select a state").default("Delhi"),
@@ -40,13 +41,14 @@ export default function SalaryCalculator() {
   const [result, setResult] = useState<any>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [shareButtonText, setShareButtonText] = useState("Share Your Savings!");
+  const [hasCalculated, setHasCalculated] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       annualCTC: undefined,
       bonus: 0,
-      pfPercentage: 0, // Default to 0% PF
+      pfPercentage: 0,
       hraPercentage: 40,
       rentPaid: 0,
       state: "Delhi",
@@ -58,8 +60,8 @@ export default function SalaryCalculator() {
 
   const onSubmit = (data: FormValues) => {
     setIsAnimating(true);
+    setHasCalculated(true);
     
-    // Simulate calculation delay for effect
     setTimeout(() => {
       calculate(data);
       setIsAnimating(false);
@@ -81,7 +83,7 @@ export default function SalaryCalculator() {
       const currentBasic = (ctc - bonus) * 0.40;
       const revisedBasic = currentBasic * data.fitmentFactor;
       cpcHike = revisedBasic - currentBasic;
-      ctc += cpcHike; // Add hike to CTC for calculation
+      ctc += cpcHike;
     }
     
     // Derive Salary Structure using the fixed logic
@@ -175,6 +177,57 @@ export default function SalaryCalculator() {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 space-y-8">
+      {/* 🆕 PRE-CALCULATION CTA - YELLOW BANNER */}
+      {!hasCalculated && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-l-4 border-amber-500 rounded-xl p-6 shadow-md hover:shadow-lg transition-all"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-amber-600" />
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-bold text-gray-900 text-lg mb-2 flex items-center gap-2">
+                💡 Quick Calc vs. Professional Analysis?
+              </h3>
+              <p className="text-gray-700 mb-3 text-sm leading-relaxed">
+                This calculator gives you <span className="font-semibold">basic take-home numbers</span>. Our <span className="font-bold text-amber-700">CTC Breakdown Report</span> shows:
+              </p>
+              <ul className="space-y-1.5 mb-4 text-sm text-gray-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Both tax regimes compared with YOUR exact deductions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Hidden salary components breakdown (HRA, Special Allowance, etc.)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>5-year salary growth projections & city-wise cost analysis</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Optimal tax-saving strategy personalized for YOUR situation</span>
+                </li>
+              </ul>
+              <Link href="/products/ctc-report">
+                <a className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:scale-105">
+                  <FileText className="w-4 h-4" />
+                  Get 8-Page Professional Report - ₹799
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </Link>
+              <p className="text-xs text-gray-500 mt-2">⚡ Delivered instantly via email • 2,178+ professionals trust us</p>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       <div className="grid md:grid-cols-12 gap-8">
         {/* Input Section */}
         <div className="md:col-span-5 space-y-6">
@@ -424,6 +477,100 @@ export default function SalaryCalculator() {
                     </Tooltip>
                   </TooltipProvider>
                 </div>
+
+                {/* 🆕 POST-CALCULATION CTA - BLUE CONVERSION BOX */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Card className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white border-0 shadow-2xl overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
+                    <CardContent className="p-8 relative z-10">
+                      <div className="text-center">
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                          <Sparkles className="w-4 h-4" />
+                          Upgrade to Professional Analysis
+                        </div>
+                        
+                        <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                          Want the Complete Picture?
+                        </h3>
+                        <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+                          Your basic calculation is ready. Now get the full professional breakdown:
+                        </p>
+                        
+                        <div className="grid md:grid-cols-2 gap-3 mb-6 text-left max-w-2xl mx-auto">
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">Both Regimes Compared</div>
+                              <div className="text-xs text-blue-200">With YOUR exact deductions</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">Hidden Components</div>
+                              <div className="text-xs text-blue-200">HRA, Special Allowance breakdown</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">5-Year Projections</div>
+                              <div className="text-xs text-blue-200">Salary growth analysis</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">City-Wise Costs</div>
+                              <div className="text-xs text-blue-200">Living expenses analysis</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">Tax Optimization</div>
+                              <div className="text-xs text-blue-200">Personalized strategy</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 bg-white/5 p-3 rounded-lg backdrop-blur-sm">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <div className="font-semibold text-sm">Instant Delivery</div>
+                              <div className="text-xs text-blue-200">PDF + Excel in 2 minutes</div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <Link href="/products/ctc-report">
+                          <a className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-blue-700 font-bold px-8 py-4 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                            <FileText className="w-5 h-5" />
+                            Get Your CTC Breakdown Report - ₹799
+                            <ArrowRight className="w-5 h-5" />
+                          </a>
+                        </Link>
+                        
+                        <div className="flex items-center justify-center gap-6 mt-6 text-sm text-blue-200">
+                          <div className="flex items-center gap-1">
+                            <Check className="w-4 h-4" />
+                            <span>2,178+ customers</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Check className="w-4 h-4" />
+                            <span>2-min delivery</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Check className="w-4 h-4" />
+                            <span>Money-back guarantee</span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
 
                 {/* Detailed Breakdown Section */}
                 <Card className="bg-blue-50/50 border-blue-200">
