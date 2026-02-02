@@ -1,3 +1,7 @@
+// src/pages/products/TaxStrategy.jsx
+// Complete Tax-Saving Strategy Report - ₹999 (REDUCED FROM ₹2,499)
+// FULLY OPTIMIZED for maximum conversions
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, TrendingDown, PiggyBank, FileText, Lock, Zap, Shield, Users, Clock } from 'lucide-react';
