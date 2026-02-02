@@ -1,3 +1,7 @@
+// src/pages/products/NegotiationLetter.jsx
+// Professional Salary Negotiation Letter - ₹499 (REDUCED FROM ₹1,499)
+// FULLY OPTIMIZED for maximum conversions
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, TrendingUp, Target, Briefcase, Award, Lock, Zap, Shield, FileText, DollarSign, Users, Clock } from 'lucide-react';
