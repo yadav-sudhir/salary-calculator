@@ -341,7 +341,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🆕 PREMIUM PRODUCTS SECTION - ENHANCED */}
+        {/* 🆕 PREMIUM PRODUCTS SECTION - ENHANCED WITH UPDATED PRICES */}
         <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -425,7 +425,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Negotiation Letter - MOST POPULAR */}
+              {/* Negotiation Letter - MOST POPULAR - UPDATED PRICE */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -440,9 +440,9 @@ export default function Home() {
                 <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">💼</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Salary Negotiation Letter</h3>
                 <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-bold text-primary">₹1,499</span>
-                  <span className="text-gray-400 line-through text-lg">₹2,499</span>
-                  <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">40% OFF</span>
+                  <span className="text-4xl font-bold text-primary">₹499</span>
+                  <span className="text-gray-400 line-through text-lg">₹1,499</span>
+                  <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">67% OFF</span>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Professional data-driven letter that helps you negotiate 15-30% higher salary with market research included.
@@ -477,7 +477,7 @@ export default function Home() {
                 <p className="text-center text-xs text-gray-500 mt-3">💰 Avg. ₹2.5L salary increase</p>
               </motion.div>
 
-              {/* Tax Strategy */}
+              {/* Tax Strategy - UPDATED PRICE */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -492,9 +492,9 @@ export default function Home() {
                   <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">💰</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Tax-Saving Strategy</h3>
                   <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-4xl font-bold text-primary">₹2,499</span>
-                    <span className="text-gray-400 line-through text-lg">₹3,999</span>
-                    <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">37% OFF</span>
+                    <span className="text-4xl font-bold text-primary">₹999</span>
+                    <span className="text-gray-400 line-through text-lg">₹2,499</span>
+                    <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">60% OFF</span>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     Comprehensive 12-page tax strategy report that can legally save you ₹50,000+ annually with 2026 tax laws.
